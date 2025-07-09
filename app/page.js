@@ -1,10 +1,21 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import Test from "../components/Test"
 
 export default function Home() {
+  // document.addEventListener("DOMContentLoaded", () => {})
+
+//  useEffect(() => {
+
+//  }, [])
+
   return (
     <div className={styles.page}>
       <main className={styles.main}>
+
+        <Test title="Mon titre 1"/>
+        <Test title="Une autre valeur"/>
+
         <Image
           className={styles.logo}
           src="/next.svg"
