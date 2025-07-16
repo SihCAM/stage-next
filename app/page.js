@@ -13,7 +13,7 @@ export default function Home() {
     <div className={styles.page}>
       <main className={styles.main}>
 
-        <Test title="Mon titre 1"/>
+        <Test title="Cours numéro 2"/>
         <Test title="Une autre valeur"/>
 
         <Image
