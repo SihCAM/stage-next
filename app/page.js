@@ -1,6 +1,10 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import Test from "../components/Test"
+import Navbar from "../components/Navbar";
+import Hero from "../components/Hero"
+import Header from "../components/Header"
+import ProductCard from "../components/ProductCard";
 
 export default function Home() {
   // document.addEventListener("DOMContentLoaded", () => {})
@@ -10,7 +14,32 @@ export default function Home() {
 //  }, [])
 
   return (
-    <div className={styles.page}>
+<div>
+      {/* Navbar */}
+      <Navbar />
+
+      {/* Hero Section */}
+      <Hero 
+        title="Bienvenue sur MyShop" 
+        subtitle="Découvrez nos produits tendance !" 
+        image="hero.jpg"
+      />
+
+      {/* Header */}
+      <Header text="Nos Produits" />
+
+      {/* Liste de produits */}
+      <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}>
+        <ProductCard image="/product1.jpg" title="Produit 1" price="29.99" />
+        <ProductCard image="/product2.jpg" title="Produit 2" price="49.99" />
+        <ProductCard image="/product3.jpg" title="Produit 3" price="19.99" />
+      </div>
+    </div>
+  );
+
+
+
+    {/* <div className={styles.page}>
       <main className={styles.main}>
 
         <Test title="Cours numéro 2"/>
@@ -101,6 +130,6 @@ export default function Home() {
           Go to nextjs.org →
         </a>
       </footer>
-    </div>
-  );
+    </div> */}
+  
 }
