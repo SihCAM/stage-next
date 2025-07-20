@@ -1,5 +1,6 @@
+import Image from "next/image";
 import React from "react";
-import "./Hero.css";
+import "../styles/Hero.css";
 
 export default function Hero({ title, subtitle, image }) {
     return (

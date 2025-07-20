@@ -13,6 +13,29 @@ export default function Home() {
 
 //  }, [])
 
+const products = [
+  {
+    image: "/product1.jpg",
+    title: "Produit 1",
+    price: 29.99,
+  },
+  {
+    image: "/product2.jpg",
+    title: "Produit 2",
+    price: 49.99,
+  },
+  {
+    image: "/product3.jpg",
+    title: "Produit 3",
+    price: 19.99,
+  },
+  {
+    image: "/product4.jpg",
+    title: "Produit 4",
+    price: 25.99,
+  },
+]
+
   return (
 <div>
       {/* Navbar */}
@@ -22,19 +45,37 @@ export default function Home() {
       <Hero 
         title="Bienvenue sur MyShop" 
         subtitle="Découvrez nos produits tendance !" 
-        image="hero.jpg"
+        image="/hero.jpg"
       />
 
       {/* Header */}
       <Header text="Nos Produits" />
 
       {/* Liste de produits */}
-      <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}>
-        <ProductCard image="/product1.jpg" title="Produit 1" price="29.99" />
-        <ProductCard image="/product2.jpg" title="Produit 2" price="49.99" />
-        <ProductCard image="/product3.jpg" title="Produit 3" price="19.99" />
-      </div>
-    </div>
+      
+
+     {/*{
+          products.map((product, index) => (
+            <ProductCard 
+              key={product.title}
+             image={product.image} 
+             title={product.title} 
+              price={product.price}
+           />
+          ))
+        }*/}
+
+        {
+          products.map(({ image, title, price }, index) => (
+            <ProductCard
+              key={title}
+              image={image}
+              title={title}
+              price={price}
+            />
+          ))
+        }
+        </div>
   );
 
 

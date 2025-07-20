@@ -1,5 +1,6 @@
+import Image from "next/image";
 import React from "react";
-import "./ProductCard.css";
+import "../styles/ProductCard.css";
 
 export default function ProductCard({ image, title, price }) {
     return (
