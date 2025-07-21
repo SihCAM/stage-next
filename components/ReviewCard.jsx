@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import styles from "./ReviewCard.css";
+import styles from "..styles/ReviewCard.css";
 
 export default function ReviewCard({ name, comment, rating }) {
   return (

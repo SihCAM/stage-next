@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "./CategoryCard.module.css";
+import styles from "../styles/CategoryCard.module.css";
 
 export default function CategoryCard({ image, name }) {
   return (

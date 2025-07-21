@@ -6,6 +6,7 @@ import Hero from "../components/Hero"
 import Header from "../components/Header"
 import ProductCard from "../components/ProductCard";
 import CategoryCard from "../components/CategoryCard";
+import FeaturesSection from "../components/FeaturesSection";
 import ReviewCard from "../components/ReviewCard";
 
 export default function Home() {
@@ -102,6 +103,10 @@ const reviews = [{
         name={name} />
       ))}
       </div>
+
+      {/* Section des fonctionnallités */}
+      <FeaturesSection />
+      
 
       {/* Liste d'avis */}  
       <Header text="Avis Clients" />

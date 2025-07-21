@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { FaTruck, FaCreditCard, FaHeadset } from "react-icons/fa";
-import styles from "./FeaturesSection.css";
+import "../styles/FeaturesSection.css"; // Adjust the path as necessary
 
 export default function FeaturesSection() {
   const features = [
