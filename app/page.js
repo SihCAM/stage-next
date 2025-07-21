@@ -5,6 +5,8 @@ import Navbar from "../components/Navbar";
 import Hero from "../components/Hero"
 import Header from "../components/Header"
 import ProductCard from "../components/ProductCard";
+import CategoryCard from "../components/CategoryCard";
+import ReviewCard from "../components/ReviewCard";
 
 export default function Home() {
   // document.addEventListener("DOMContentLoaded", () => {})
@@ -36,6 +38,18 @@ const products = [
   },
 ]
 
+const categories = [
+  { image: "/category1.jpg", name: "chaussures" },
+  { image: "/category2.jpg", name: "Accessoires"},
+  { image: "/category3.jpg", name: "Vêtements" }
+];
+
+const reviews = [{
+  name: "Alice", comment: "Super boutique !", rating: "5",
+  name: "Marc", coment: "Produits de qualité.", rating: "4.5",
+  name: "Julie", coment: "Livraison rapide !", rating: "5",
+}];
+
   return (
 <div>
       {/* Navbar */}
@@ -50,6 +64,7 @@ const products = [
 
       {/* Header */}
       <Header text="Nos Produits" />
+      <div>
 
       {/* Liste de produits */}
       
@@ -76,7 +91,33 @@ const products = [
           ))
         }
         </div>
+
+      {/* Liste de catégories */}
+      <Header text="Nos Catégories" />
+      <div className={styles.categories}>
+      {categories.map(({ image, name }) => (
+        <CategoryCard 
+        key={name} 
+        image={image} 
+        name={name} />
+      ))}
+      </div>
+
+      {/* Liste d'avis */}  
+      <Header text="Avis Clients" />
+      <div className="=styles.reviews">
+        {reviews.map(({ name, comment, rating }) => (
+          <ReviewCard 
+          key={name}
+          name={name}
+          comment={comment}
+          rating={rating} />
+        ))}
+      </div>
+    </div>
+      
   );
+    
 
 
 

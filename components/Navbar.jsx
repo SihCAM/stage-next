@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import "../styles/Navbar.css";
 
@@ -28,7 +29,9 @@ export default function Navbar() {
                 {
                     //Toujours mettre la fonction anonyme avec les parenthèse , on autoreturn sauf quand on doit ecrire des calculs
                     links.map(({ href, name }) => (
-                    <li key={name}><a href={href}>{name}</a></li>
+                    <li key={name}>
+                    <Link href={href}>{name}</Link></li>
+                    
                     
 
                     ))
