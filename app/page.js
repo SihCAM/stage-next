@@ -8,58 +8,59 @@ import ProductCard from "../components/ProductCard";
 import CategoryCard from "../components/CategoryCard";
 import FeaturesSection from "../components/FeaturesSection";
 import ReviewCard from "../components/ReviewCard";
+import SectionWrapper from "../components/SectionWrapper";
 
 export default function Home() {
   // document.addEventListener("DOMContentLoaded", () => {})
 
-//  useEffect(() => {
+  //  useEffect(() => {
 
-//  }, [])
+  //  }, [])
 
-const products = [
-  {
-    image: "/product1.jpg",
-    title: "Produit 1",
-    price: 29.99,
-  },
-  {
-    image: "/product2.jpg",
-    title: "Produit 2",
-    price: 49.99,
-  },
-  {
-    image: "/product3.jpg",
-    title: "Produit 3",
-    price: 19.99,
-  },
-  {
-    image: "/product4.jpg",
-    title: "Produit 4",
-    price: 25.99,
-  },
-]
+  const products = [
+    {
+      image: "/product1.jpg",
+      title: "Produit 1",
+      price: 29.99,
+    },
+    {
+      image: "/product2.jpg",
+      title: "Produit 2",
+      price: 49.99,
+    },
+    {
+      image: "/product3.jpg",
+      title: "Produit 3",
+      price: 19.99,
+    },
+    {
+      image: "/product4.jpg",
+      title: "Produit 4",
+      price: 25.99,
+    },
+  ]
 
-const categories = [
-  { image: "/category1.jpg", name: "chaussures" },
-  { image: "/category2.jpg", name: "Accessoires"},
-  { image: "/category3.jpg", name: "Vêtements" }
-];
+  const categories = [
+    { image: "/category1.jpg", name: "chaussures" },
+    { image: "/category2.jpg", name: "Accessoires" },
+    { image: "/category3.jpg", name: "Vêtements" }
+  ];
 
-const reviews = [{
-  name: "Alice", comment: "Super boutique !", rating: "5",
-  name: "Marc", coment: "Produits de qualité.", rating: "4.5",
-  name: "Julie", coment: "Livraison rapide !", rating: "5",
-}];
+  const reviews = [{
+    name: "Alice", comment: "Super boutique !", rating: "5",
+    name: "Marc", coment: "Produits de qualité.", rating: "4.5",
+    name: "Julie", coment: "Livraison rapide !", rating: "5",
+  }];
 
   return (
-<div>
+    <div>
       {/* Navbar */}
       <Navbar />
 
       {/* Hero Section */}
-      <Hero 
-        title="Bienvenue sur MyShop" 
-        subtitle="Découvrez nos produits tendance !" 
+      <Hero
+        title="Bienvenue sur MyShop"
+        subtitle="Découvrez nos produits tendance !"
         image="/hero.jpg"
       />
 
@@ -67,10 +68,10 @@ const reviews = [{
       <Header text="Nos Produits" />
       <div>
 
-      {/* Liste de produits */}
-      
+        {/* Liste de produits */}
 
-     {/*{
+
+        {/*{
           products.map((product, index) => (
             <ProductCard 
               key={product.title}
@@ -91,42 +92,70 @@ const reviews = [{
             />
           ))
         }
-        </div>
+      </div>
 
       {/* Liste de catégories */}
       <Header text="Nos Catégories" />
       <div>
-      {categories.map(({ image, name }) => (
-        <CategoryCard 
-        key={name} 
-        image={image} 
-        name={name} />
-      ))}
+        {categories.map(({ image, name }) => (
+          <CategoryCard
+            key={name}
+            image={image}
+            name={name} />
+        ))}
       </div>
 
       {/* Section des fonctionnallités */}
       <FeaturesSection />
 
 
-      {/* Liste d'avis */}  
+      {/* Liste d'avis */}
       <Header text="Avis Clients" />
       <div className={styles.reviews}>
         {reviews.map(({ name, comment, rating }) => (
-          <ReviewCard 
-          key={name}
-          name={name}
-          comment={comment}
-          rating={rating} />
+          <ReviewCard
+            key={name}
+            name={name}
+            comment={comment}
+            rating={rating} />
         ))}
       </div>
+
+      <SectionWrapper text="Section 1">
+        <>
+          <p>test 1</p>
+          <p>test 2</p>
+        </>
+      </SectionWrapper>
+
+      <SectionWrapper text="Section 1">
+        <>
+          <p>test 1</p>
+          <p>test 2</p>
+        </>
+      </SectionWrapper>
+
+      <SectionWrapper text="Section 1">
+        {/* TODO: mettre un fragment quand tu as plusieurs parents ou quand du code JS (comme ici) */}
+        <>
+          {reviews.map(({ name, comment, rating }) => (
+            <ReviewCard
+              key={name}
+              name={name}
+              comment={comment}
+              rating={rating} />
+          ))}
+        </>
+      </SectionWrapper>
+
     </div>
-      
+
   );
-    
 
 
 
-    {/* <div className={styles.page}>
+
+  {/* <div className={styles.page}>
       <main className={styles.main}>
 
         <Test title="Cours numéro 2"/>
@@ -218,5 +247,5 @@ const reviews = [{
         </a>
       </footer>
     </div> */}
-  
+
 }
