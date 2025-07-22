@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { FaTruck, FaCreditCard, FaHeadset } from "react-icons/fa";
-import "../styles/FeaturesSection.css"; 
+import styles from "../styles/FeaturesSection.module.css"; 
 export default function FeaturesSection() {
   const features = [
     {
@@ -22,11 +22,11 @@ export default function FeaturesSection() {
   ];
 
   return (
-    <section className={styles.featuresSection}>
+    <section>
       <h2>Nos Services</h2>
-      <div className={styles.featuresGrid}>
+      <div>
         {features.map(({ icon, title, description }) => (
-          <div key={title} className={styles.featureCard}>
+          <div key={title}>
             <span className={styles.icon}>{icon}</span>
             <h3>{title}</h3>
             <p>{description}</p>
