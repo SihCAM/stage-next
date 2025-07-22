@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "./page.module.css";
+import styles from "../styles/page.module.css";
 import Test from "../components/Test"
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero"
@@ -95,7 +95,7 @@ const reviews = [{
 
       {/* Liste de catégories */}
       <Header text="Nos Catégories" />
-      <div className={styles.categories}>
+      <div>
       {categories.map(({ image, name }) => (
         <CategoryCard 
         key={name} 
@@ -106,11 +106,11 @@ const reviews = [{
 
       {/* Section des fonctionnallités */}
       <FeaturesSection />
-      
+
 
       {/* Liste d'avis */}  
       <Header text="Avis Clients" />
-      <div className="=styles.reviews">
+      <div className={styles.reviews}>
         {reviews.map(({ name, comment, rating }) => (
           <ReviewCard 
           key={name}

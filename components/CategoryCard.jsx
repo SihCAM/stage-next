@@ -11,7 +11,7 @@ export default function CategoryCard({ image, name }) {
         height={200}
         className={styles.categoryImage}
       />
-      <h3>{name}</h3>
+      <h3 className={styles.titleH3}>{name}</h3>
     </div>
   );
 }
